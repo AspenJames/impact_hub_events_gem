@@ -1,3 +1,4 @@
+require 'open-uri'
 class ImpactHubEvents::Scraper
   attr_accessor :doc
 
