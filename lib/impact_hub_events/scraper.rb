@@ -6,4 +6,8 @@ class ImpactHubEvents::Scraper
     @doc = Nokogiri::HTML(open(url))
   end
 
+  def scrape_events
+    
+  end
+
 end
