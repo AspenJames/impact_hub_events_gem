@@ -3,6 +3,7 @@ PATH
   specs:
     impact_hub_events (0.1.0)
       nokogiri (~> 1.8)
+      require_all
 
 GEM
   remote: https://rubygems.org/
@@ -11,6 +12,7 @@ GEM
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     rake (10.4.2)
+    require_all (2.0.0)
 
 PLATFORMS
   ruby
