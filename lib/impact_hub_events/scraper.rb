@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'nokogiri'
 class ImpactHubEvents::Scraper
   attr_accessor :doc
 
@@ -7,7 +8,7 @@ class ImpactHubEvents::Scraper
   end
 
   def scrape_events
-    
+
   end
 
 end
