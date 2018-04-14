@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'nokogiri'
+require 'pry'
 class ImpactHubEvents::Scraper
   attr_accessor :doc
 
@@ -8,7 +9,7 @@ class ImpactHubEvents::Scraper
   end
 
   def create_events
-    @doc.css("div.pbr-event-schedule div.row div.col-sm-10 article div.right h3 a").map{|link| ImpactHubEvents::Event.new(link.attribute("href").value)}
+    @doc.css("div.pbr-event-schedule div.row div.col-sm-10 article div.right h3").map{|link| ImpactHubEvents::Event.new(link.css('a').attribute("href").value)}
 
     #event link @doc.css("div.pbr-event-schedule div.row div.col-sm-10 article div.right h3 a").map{|link| link.attribute("href").value}
 
