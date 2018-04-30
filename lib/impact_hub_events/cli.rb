@@ -1,3 +1,4 @@
+require 'paint'
 class ImpactHubEvents::CLI
   def call
     puts "Upcoming events at Impact Hub Seattle:"
@@ -9,7 +10,7 @@ class ImpactHubEvents::CLI
 
   def list_events
     ImpactHubEvents::Event.all.each_with_index do |event, index|
-      puts "#{index + 1}. #{event.title}"
+      puts Paint["#{index + 1}. #{event.title}", :green]
     end
     puts
     self.list_menu
@@ -17,14 +18,14 @@ class ImpactHubEvents::CLI
 
   def list_detail(event)
     puts
-    puts "#{event.title}"
+    puts Paint["#{event.title}", :green]
     puts
-    puts "Date: #{event.date}"
-    puts "Time: #{event.time}"
-    puts "Location: #{event.location}"
+    puts Paint["Date: #{event.date}", :blue, :bright]
+    puts Paint["Time: #{event.time}", :blue, :bright]
+    puts Paint["Location: #{event.location}", :blue, :bright]
     unless event.description.nil?
       puts
-      puts "#{event.description}"
+      puts Paint["#{event.description}", :magenta, :bold]
     end
     puts
     self.list_menu
