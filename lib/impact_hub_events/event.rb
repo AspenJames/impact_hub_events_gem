@@ -1,9 +1,9 @@
 class ImpactHubEvents::Event
   attr_accessor :url, :date, :time, :title, :description, :location
+  @@all = []
 
   def initialize(url)
     @url = url
-    @@all = []
     @@all << self
   end
 
