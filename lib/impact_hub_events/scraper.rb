@@ -9,11 +9,9 @@ class ImpactHubEvents::Scraper
   end
 
   def create_events
-    @doc.css("div.pbr-event-schedule div.row div.col-sm-10 article div.right h3").map{|link| ImpactHubEvents::Event.new(link.css('a').attribute("href").value)}
-
-    #event link @doc.css("div.pbr-event-schedule div.row div.col-sm-10 article div.right h3 a").map{|link| link.attribute("href").value}
-
-
+    @doc.css("div.pbr-event-schedule div.row").map do |row|
+      ImpactHubEvents::Event.new(row.css("div.col-sm-10 div article div.right a").attribute("href").value)
+    end
     #---- From inidividual page
 
     #date doc.css("div.col-sm-3 ul li span").first.text
