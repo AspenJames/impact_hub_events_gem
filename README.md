@@ -4,6 +4,8 @@ This gem provides a command-line interface for viewing and browsing upcoming eve
 
 ## Installation
 
+This gem depends on Ruby version >= 2.3.0. If you need to install another version of Ruby, visit [RVM](https://rvm.io).
+
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -17,6 +19,8 @@ And then execute:
 Or install it yourself as:
 
     $ gem install impact_hub_events
+
+If `bundle` fails to build native extensions for dependencies, execute `gem update --system` and try again.
 
 ## Usage
 
